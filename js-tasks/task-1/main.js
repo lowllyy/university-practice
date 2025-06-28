@@ -30,3 +30,24 @@ function update_size (){
 
 input_w.oninput = update_size;
 input_h.oninput = update_size;
+
+const button = document.querySelector('button')
+
+// функция для смены цвета на случайный
+
+function change_color(){
+    let symbols = "0123456789ABCDEF";
+    let max = symbols.length;
+    let color = '#';
+    for(let i=0; i<6; i++){
+        color += symbols[Math.floor(Math.random()*max)];
+    }
+
+    // изменение цвета фигуры
+
+    square.style.backgroundColor = color;
+}; 
+
+// обработка события клика на кнопку
+
+button.onclick = change_color;
