@@ -45,7 +45,8 @@ label{
 .send{
     width: 350px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .send__btn{
@@ -53,4 +54,8 @@ label{
     width: 90px;
     border: 1px solid #000;
     border-radius: 3px;
+}
+
+.send__btn-message{
+    margin-top: 10px;
 }

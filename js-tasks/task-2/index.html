@@ -21,13 +21,15 @@
             </div>
             <div class="feedback">  
                 <label for="comment">Введите комментарий к заказу:</label>
-                <textarea class="feedback__textarea" name="comment" id="comment" placeholder="Комментарий к заказу (макс. 500 символов)"></textarea>
+                <textarea class="feedback__textarea" name="comment" id="comment" placeholder="Комментарий к заказу (макс. 500 символов)" maxlength="500"></textarea>
             </div>
             <div class="send">
                 <button class="send__btn" type="submit">Отправить</button>
+                <div class="send__btn-message"></div>
             </div>
         </form>
     </div>
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="script.js"></script>
 </body>
 </html>
