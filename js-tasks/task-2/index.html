@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TASK 2: Ordering</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="registration">
+                <label for="name">Введите ФИО:</label>
+                <input class="registration__field" type="text" name="name" id="name" placeholder="ФИО">
+                <br>
+                <label for="phone">Введите номер телефона:</label>
+                <input class="registration__field" type="tel" name="phone" id="phone" placeholder="Телефон">
+                <br>
+                <label for="email">Введите адрес электронной почты:</label>
+                <input class="registration__field" type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="feedback">  
+                <label for="comment">Введите комментарий к заказу:</label>
+                <textarea class="feedback__textarea" name="comment" id="comment" placeholder="Комментарий к заказу (макс. 500 символов)"></textarea>
+            </div>
+            <div class="send">
+                <button class="send__btn" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
