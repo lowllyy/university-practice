@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>TASK 2: Ordering</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=df0496f8-62fc-4a25-8d52-d4bf657902d8&lang=ru_RU" type="text/javascript">
+    </script>
 </head>
 <body>
     <div class="container">
@@ -19,6 +21,7 @@
                 <label for="email">Введите адрес электронной почты:</label>
                 <input class="registration__field" type="email" name="email" id="email" placeholder="Email">
             </div>
+            <div id="map" style="width: 350px; height: 300px"></div>
             <div class="feedback">  
                 <label for="comment">Введите комментарий к заказу:</label>
                 <textarea class="feedback__textarea" name="comment" id="comment" placeholder="Комментарий к заказу (макс. 500 символов)" maxlength="500"></textarea>

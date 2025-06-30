@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.registration, .feedback, .send {
+.registration, .feedback, .send, #map {
     margin-left:20px;
 }
 
@@ -33,7 +33,7 @@ label{
     margin-bottom: 25px;
 }
 
-.feedback{
+.feedback, #map{
     margin-bottom: 15px;
 }
 
