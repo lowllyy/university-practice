@@ -1,0 +1,69 @@
+/* ----------------------------------- filter styles ----------------------------------------------- */
+.container {
+    width: 540px;
+    height: 100px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price_filters {
+    width: 355px;
+}
+
+.price_filters__input {
+    padding: 3 px;
+    box-sizing: border-box;
+    width: 70px;
+    height: 22px;
+    border: 1px solid #000;
+}
+
+.price_filters__label, 
+.price_filters__input {
+    margin-right: 5px;
+}
+
+.price_filters__input:last-of-type {
+    margin-right: 15px;
+}
+
+.price_filters__input::placeholder {
+    color: #ccc;
+}
+
+.price_filters__btn {
+    padding: 2px 8px;
+    box-sizing: border-box;
+    width: 90px;
+    height: 23px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+/* ----------------------------------- table styles ----------------------------------------------- */
+
+.table-container {
+    margin-left: 10px;
+    width: 540px;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px 30px 10px 5px;
+}
+
+tr {
+    border: 1px solid #000;
+}
+
+th {
+    background: #cecece;
+    font-weight: normal;
+}
