@@ -10,12 +10,13 @@
     <div class="container">
         <div class="price_filters">
             <label class="price_filters__label" for="start_price">Цена от:</label>
-            <input class="price_filters__input" type="text" name="start_price" id="start_price" placeholder="0">
+            <input class="price_filters__input" type="text" name="start_price" id="start_price" placeholder="0" oninput="validate_inputs()">
             <label class="price_filters__label" for="end_price">до:</label>
-            <input class="price_filters__input" type="text" name="end_price" id="end_price" placeholder="10000">
-            <button class="price_filters__btn">Обновить</button>
+            <input class="price_filters__input" type="text" name="end_price" id="end_price" placeholder="10000" oninput="validate_inputs()">
+            <button class="price_filters__btn" id="update-btn">Обновить</button>
         </div>
     </div>
+    <div id="message_box"></div>
     <div class="table-container" id="table-container"></div>
     <script src="main.js"></script>
 </body>
