@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TASK 4: CPU usage graph</title>
+</head>
+<body>
+    <div class="graph">
+        <canvas id="line_graph"></canvas>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="container__title">Количество запросов:</div>
+            <div class="container__content" id="requests"></div>
+        </div>
+        <div class="container">
+            <div class="container__title">Процент запросов, вернувших ошибку:</div>
+            <div class="container__content" id="errors"></div>
+        </div>
+        <div class="container">
+            <div class="container__title">Количество ошибок:</div>
+            <div class="container__content" id="number_errors"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
