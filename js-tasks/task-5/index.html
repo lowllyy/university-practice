@@ -9,26 +9,29 @@
 <body>
     <div class="container">
         <div class="container__top">
-            <div class="table">
+            <div class="table" id="table">
             <table>
-                <tr>
-                    <td>
-                        <input type="text" placeholder="1234">
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="1234">
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             </div>
             <div class="vertical-btns">
-                <button class="btn">+</button>
-                <button class="btn">-</button>
+                <button class="btn" id="add-col">+</button>
+                <button class="btn" id="del-col">-</button>
             </div>
         </div>
         <div class="container__bottom">
             <div class="horizontal-btns">
-                <button class="btn">+</button>
-                <button class="btn">-</button>
+                <button class="btn" id="add-row">+</button>
+                <button class="btn" id="del-row">-</button>
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
