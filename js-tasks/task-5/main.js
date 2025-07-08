@@ -7,6 +7,21 @@ const del_col = document.getElementById('del-col');
 const add_row = document.getElementById('add-row');
 const del_row = document.getElementById('del-row');
 
+let saved_info = localStorage.getItem('user-table');
+if (!saved_info) {
+    save_table();
+}
+else {
+    load_table();
+}
+
+const inputs = document.querySelectorAll('input');
+inputs.forEach(input => {
+    input.oninput = function() {
+        save_table();
+    }
+})
+
 function get_number_cols() {
     const first_row = tbody.querySelector('tr');
     return first_row.cells.length;
@@ -30,8 +45,6 @@ function update_btn_state() {
     }
 }
 
-update_btn_state();
-
 function add_column() {
     let rows = Array.from(tbody.children);
     rows.forEach(row => {
@@ -42,18 +55,63 @@ function add_column() {
         new_col.appendChild(new_input);
         row.appendChild(new_col);
     })
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.oninput = function() {
+            save_table();
+        }
+    });
     update_btn_state();
+    save_table();
+}
+
+function can_delete_row(row){
+    for (let i = 0; i < row.cells.length; i++) {
+        const cell = row.cells[i];
+        const input = cell.querySelector('input');
+        if(input.value != ''){
+            return false;
+        }
+    }
+    return true;
+}
+
+function can_delete_col(rows){
+    for(let i = 0; i < rows.length; i++){
+        let last_col = rows[i].lastElementChild;
+        const input = last_col.querySelector('input');
+        if (input.value != ''){
+            return false;
+        }
+    }
+    return true;
 }
 
 function delete_column() {
     let rows = Array.from(tbody.children);
-    rows.forEach(row =>{
-        if (row.cells.length > 1) {
-            let last_child = row.lastElementChild;
-            row.removeChild(last_child);
+    let permission = can_delete_col(rows);
+    if (!permission) {
+        const result = confirm('В удаляемом столбце есть данные! Всё равно удаляем?');
+        if(result){
+            rows.forEach(row =>{
+                if (row.cells.length > 1) {
+                    let last_child = row.lastElementChild;
+                    row.removeChild(last_child);
+                }
+            })
         }
-    })
+    }
+    else {
+        rows.forEach(row =>{
+            if (row.cells.length > 1) {
+                let last_child = row.lastElementChild;
+                row.removeChild(last_child);
+            }
+        })
+    }
+
     update_btn_state();
+    save_table();
 }
 
 add_col.onclick = function() {
@@ -81,15 +139,32 @@ function add_new_row() {
         new_cell.appendChild(new_inp);
         new_row.appendChild(new_cell);
     }
-    
+
     tbody.appendChild(new_row);
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.oninput = function() {
+            save_table();
+        }
+    });
     update_btn_state();
+    save_table();
 }
 
 function delete_row() {
     let last_row = tbody.lastElementChild;
-    tbody.removeChild(last_row);
+    let permission = can_delete_row(last_row);
+    if(!permission){
+        const result = confirm('В удаляемой строке есть данные! Всё равно удаляем?');
+        if(result){
+            tbody.removeChild(last_row);
+        }
+    }
+    else{
+        tbody.removeChild(last_row);
+    }
     update_btn_state();
+    save_table();
 }
 
 add_row.onclick = function() {
@@ -98,4 +173,39 @@ add_row.onclick = function() {
 
 del_row.onclick = function() {
     delete_row();
+}
+
+function save_table() {
+    let data = [];
+    let rows = document.querySelectorAll('tr');
+    rows.forEach(row => {
+        let data_in_row = [];
+        let cols = row.querySelectorAll('td');
+        cols.forEach(col => {
+            const input = col.querySelector('input');
+            data_in_row.push(input.value);
+        });
+        data.push(data_in_row);
+    });
+    let serial_obj = JSON.stringify(data);
+    localStorage.setItem('user-table', serial_obj);
+}
+
+function load_table() {
+    tbody.innerHTML = '';
+    let return_table = JSON.parse(localStorage.getItem('user-table'));
+    return_table.forEach(data_in_row => {
+        const new_row = document.createElement('tr');
+        data_in_row.forEach(col =>{
+            const new_col = document.createElement('td');
+            const new_input = document.createElement('input');
+            new_input.type = 'text';
+            new_input.value = col;
+            new_input.placeholder = '1234';
+            new_col.appendChild(new_input);
+            new_row.appendChild(new_col);
+        });
+        tbody.appendChild(new_row);
+    });
+    update_btn_state();
 }
