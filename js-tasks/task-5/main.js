@@ -7,6 +7,8 @@ const del_col = document.getElementById('del-col');
 const add_row = document.getElementById('add-row');
 const del_row = document.getElementById('del-row');
 
+const is_touch_device = 'ontouchstart' in window;
+
 let saved_info = localStorage.getItem('user-table');
 if (!saved_info) {
     save_table();
@@ -16,10 +18,29 @@ else {
 }
 
 const inputs = document.querySelectorAll('input');
+
 inputs.forEach(input => {
-    input.oninput = function() {
-        save_table();
+    input.readOnly = true;
+
+    if (is_touch_device) {
+        input.addEventListener('touchstart', function() {
+            input.readOnly = false;
+            input.focus();
+        });
     }
+    else {
+        input.addEventListener('dblclick', function() {
+            input.readOnly = false;
+            input.focus();
+        });
+    };
+
+    input.addEventListener('blur', function() {
+        input.readOnly = true;
+    });
+    input.addEventListener('input', function(){
+        save_table();
+    });
 })
 
 function get_number_cols() {
@@ -56,11 +77,31 @@ function add_column() {
         row.appendChild(new_col);
     })
     const inputs = document.querySelectorAll('input');
+
     inputs.forEach(input => {
-        input.oninput = function() {
-            save_table();
+        input.readOnly = true;
+
+        if (is_touch_device) {
+            input.addEventListener('touchstart', function() {
+                input.readOnly = false;
+                input.focus();
+            });
         }
+        else {
+            input.addEventListener('dblclick', function() {
+                input.readOnly = false;
+                input.focus();
+            });
+        }
+
+        input.addEventListener('blur', function() {
+            input.readOnly = true;
+        });
+        input.addEventListener('input', function(){
+            save_table();
+        });
     });
+    
     update_btn_state();
     save_table();
 }
@@ -141,12 +182,33 @@ function add_new_row() {
     }
 
     tbody.appendChild(new_row);
+    
     const inputs = document.querySelectorAll('input');
+
     inputs.forEach(input => {
-        input.oninput = function() {
-            save_table();
+        input.readOnly = true;
+
+        if (is_touch_device) {
+            input.addEventListener('touchstart', function() {
+                input.readOnly = false;
+                input.focus();
+            });
         }
+        else {
+            input.addEventListener('dblclick', function() {
+                input.readOnly = false;
+                input.focus();
+            });
+        }
+
+        input.addEventListener('blur', function() {
+            input.readOnly = true;
+        });
+        input.addEventListener('input', function(){
+            save_table();
+        });
     });
+
     update_btn_state();
     save_table();
 }
