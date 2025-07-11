@@ -63,6 +63,12 @@
     justify-content: center;
 }
 
+.heading-left{
+    margin: 20px 0 40px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
 span {
     margin-right: 16px;
 }
@@ -363,4 +369,28 @@ h4 {
 
 .description_on_black {
     color: #D4D4D8;
+}
+
+/* ----------------------------about me section----------------------- */
+.about__inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__content {
+    max-width: 610px;
+    margin: 10.14px 0;
+}
+
+.person {
+    width: 519px;
+    height: 593px;
+}
+
+.paragraph {
+    margin-bottom: 20px;
+}
+
+.paragraph:last-child{
+    margin-bottom: 32px;
 }
