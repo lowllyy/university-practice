@@ -57,16 +57,26 @@
     color:#A0A0A0;
 }
 
+.heading {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
 span {
     margin-right: 16px;
 }
 
-h1 span:last-child{
+span:last-child{
     margin-right: 0;
 }
 
-/* ------------------------------header----------------------- */
+h2{
+    margin: 0;
+    line-height: 1.17;
+}
 
+/* ------------------------------header----------------------- */
 .header__container {
     padding: 24px 80px;
 }
@@ -227,12 +237,12 @@ p {
     min-width: 1216px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .skills__technologies{
     max-width: 1216px;
     max-height: 492px;
+    margin-top: 20px;
     padding: 40px 0;
 }
 
@@ -254,6 +264,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: .3s;
 }
 
 .tech__name{
@@ -267,4 +278,89 @@ p {
     width: 56px;
     height: 56px;
     margin-bottom: 32px;
+}
+
+/* ----------------------------experience section----------------------- */
+
+.experience{
+    background: #000;
+}
+
+.experience__inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.white {
+    color: #fff;
+}
+
+.experience__examples {
+    width: 1216px;
+    padding: 40px 24px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.block {
+    width: 1168px;
+    height: 192px;
+    box-sizing: border-box;
+    border: 1px solid #71717A;
+    border-radius: 10px;
+    padding: 30px 24px;
+    transition: .3s;
+}
+
+.block:hover {
+    background-color: #27272a;
+    border: 0;
+}
+
+.examples__inner {
+    display: grid;
+    grid-template-columns: 1168px;
+    row-gap: 32px;
+}
+
+.block__name {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+h4 {
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.16667;
+    letter-spacing: -0.02em;
+    margin: 0;
+    margin-right: auto;
+    color: #fff;
+}
+
+.data {
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #D4D4D8;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+    margin-right: 32px;
+}
+
+.block__description {
+    margin-top: 28px;
+}
+
+.description_on_black {
+    color: #D4D4D8;
 }
