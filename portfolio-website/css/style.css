@@ -473,3 +473,74 @@ h3 {
     height: 20px;
     margin-top: 28px;
 }
+
+/* ----------------------------testimonial section----------------------- */
+
+.testimonial__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial__people {
+    margin-top: 20px;
+    padding: 40px 24px;
+    max-height: 478px;
+    box-sizing: border-box;
+}
+
+.people__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial__person {
+    border-radius: 20px;
+    padding: 40px;
+    width: 370px;
+    height: 398px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px -6px rgba(24, 39, 75, 0.08), 0 6px 8px -6px rgba(24, 39, 75, 0.12);
+    display:flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+}
+
+.person-icon {
+    width: 96px;
+    height: 96px;
+}
+
+.testimonial__person p {
+    color: #404040;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.line {
+    width: 120px;
+    height: 2px;
+    background-color: #000;
+}
+
+h5 {
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #404040;
+    margin: 0;
+}
+
+h6 {
+    font-family: Sora, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #71717A;
+    margin: 0;
+}

@@ -118,3 +118,63 @@ link.forEach(element => {
         img.src = 'images/projects-section/Read-More.svg';
     });
 });
+
+const man_block = document.querySelectorAll('.man');
+const woman_block = document.querySelector('.woman');
+
+man_block.forEach(block => {
+    block.addEventListener('mouseenter', function(){
+        block.style.backgroundColor = '#000';
+        const img = block.querySelector('img');
+        const text = block.querySelector('p');
+        const line = block.querySelector('.line');
+        const name = block.querySelector('h5');
+        const work = block.querySelector('h6');
+        img.src = 'images/testimonial/white-icons/white-icon-man.svg';
+        text.style.color = '#fff';  
+        line.style.backgroundColor = '#fff';
+        name.style.color = '#fff';
+        work.style.color = '#fff';
+    });
+    block.addEventListener('mouseleave', function(){
+        block.style.backgroundColor = '#fff';
+        const img = block.querySelector('img');
+        const text = block.querySelector('p');
+        const line = block.querySelector('.line');
+        const name = block.querySelector('h5');
+        const work = block.querySelector('h6');
+        img.src = 'images/testimonial/black-icons/man.svg';
+        text.style.color = '#404040';  
+        line.style.backgroundColor = '#000';
+        name.style.color = '#404040';
+        work.style.color = '#71717A';
+    });
+})
+
+woman_block.addEventListener('mouseenter', function(){
+    woman_block.style.backgroundColor = '#000';
+    const img = woman_block.querySelector('img');
+    const text = woman_block.querySelector('p');
+    const line = woman_block.querySelector('.line');
+    const name = woman_block.querySelector('h5');
+    const work = woman_block.querySelector('h6');
+    img.src = 'images/testimonial/white-icons/woman.svg';
+    text.style.color = '#fff';  
+    line.style.backgroundColor = '#fff';
+    name.style.color = '#fff';
+    work.style.color = '#fff';
+});
+
+woman_block.addEventListener('mouseleave', function(){
+    woman_block.style.backgroundColor = '#fff';
+    const img = woman_block.querySelector('img');
+    const text = woman_block.querySelector('p');
+    const line = woman_block.querySelector('.line');
+    const name = woman_block.querySelector('h5');
+    const work = woman_block.querySelector('h6');
+    img.src = 'images/testimonial/black-icons/black-icon-woman.svg';
+    text.style.color = '#404040';  
+    line.style.backgroundColor = '#000';
+    name.style.color = '#404040';
+    work.style.color = '#71717A';
+});
