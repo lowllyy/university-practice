@@ -105,3 +105,16 @@ block_nest.forEach(block => {
         text.style.color = '';  
     });
 });
+
+const link = document.querySelectorAll(".read-more_link");
+
+link.forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        const img = element.querySelector('.read-more');
+        img.src = 'images/projects-section/export.svg';
+    });
+    element.addEventListener('mouseleave', function() {
+        const img = element.querySelector('.read-more');
+        img.src = 'images/projects-section/Read-More.svg';
+    });
+});
